@@ -6,13 +6,13 @@ const client = new Discord.Client();
 const fs = require('fs');
 const commands = JSON.parse(fs.readFileSync('./commands.json', 'utf8'));
 
-const prefix = config.prefix;
+const prefix = process.env.PREFIX;
 
 client.once('ready', () => {
     console.log('Reminders are ready!');
     
     let scheduledMessage = new cron.CronJob('00 00 21 * * *', () => {
-        var testChannel = client.channels.cache.get(config.channelid);
+        var testChannel = client.channels.cache.get(process.env.CHANNEL_ID);
         testChannel.send("@Capstone 1 Members  @Capstone 2 Members @Senior Project Members Reminder for daily standups!");
     })
         
@@ -49,6 +49,6 @@ client.on('message', message => {
     }
 })
 
-client.login(config.token);
+client.login(process.env.CLIENT_TOKEN);
 
 
