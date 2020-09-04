@@ -1,0 +1,29 @@
+{
+    "Help": {
+        "name":"Help",
+        "group":"User",
+        "desc":"Displays the list of commands.",
+        "usage":"help"
+    },
+
+    "Description": {
+        "name":"Project Architecture",
+        "group":"User",
+        "desc":"Returns the YouTube video for the project architecture.",
+        "usage":"ppt"
+    },
+
+    "Optimize": {
+        "name":"Occlusion and Lighting",
+        "group":"User",
+        "desc":"Returns the YouTube video for occlusion culling and light baking (by Ed).",
+        "usage":"optimize"
+    },
+
+    "Meeting": {
+        "name":"Meeting Dates and Times - ***WIP***",
+        "group":"Admin",
+        "desc":"Sets specific time for daily standup reminder.",
+        "usage":"meeting <title>,[time]"
+    }
+}
