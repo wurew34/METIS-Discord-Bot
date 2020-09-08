@@ -15,8 +15,14 @@ client.once('ready', () => {
         var testChannel = client.channels.cache.get(process.env.CHANNEL_ID);
         testChannel.send("<@&" + roleId + "> One hour reminder for daily standups!");
     })
+
+    let scheduledMessage1 = new cron.CronJob('00 00 22 * * 1-5', () => {
+        var testChannel = client.channels.cache.get(process.env.CHANNEL_ID);
+        testChannel.send("<@&" + roleId + "> It's about that time! Turn in daily standups!");
+    })
         
     scheduledMessage.start()
+    scheduledMessage1.start()
 });
 
 client.on('message', message => {
