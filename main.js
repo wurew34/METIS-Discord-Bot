@@ -11,12 +11,12 @@ const roleId = process.env.ROLE_ID;
 client.once('ready', () => {
     console.log('Reminders are ready!');
     
-    let scheduledMessage = new cron.CronJob('00 00 07 * * 2-6', () => {
+    let scheduledMessage = new cron.CronJob('00 00 06 * * 2-6', () => {
         var testChannel = client.channels.cache.get(process.env.CHANNEL_ID);
         testChannel.send("<@&" + roleId + "> One hour reminder for daily standups!");
     })
 
-    let scheduledMessage1 = new cron.CronJob('00 00 08 * * 2-6', () => {
+    let scheduledMessage1 = new cron.CronJob('00 00 07 * * 2-6', () => {
         var testChannel = client.channels.cache.get(process.env.CHANNEL_ID);
         testChannel.send("<@&" + roleId + "> It's about that time! Turn in daily standups!");
     })
